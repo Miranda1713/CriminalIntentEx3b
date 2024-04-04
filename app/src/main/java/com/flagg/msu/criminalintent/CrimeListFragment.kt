@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.ViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.flagg.msu.criminalintent.databinding.FragmentCrimeListBinding
 
@@ -35,6 +35,10 @@ class CrimeListFragment : Fragment() {
         _binding = FragmentCrimeListBinding.inflate(inflater, container, false)
 
         binding.crimeRecyclerView.layoutManager = LinearLayoutManager(context)
+
+        val crimes = crimeListViewModel.crimes
+        val adapter = CrimeListAdapter(crimes)
+        binding.crimeRecyclerView.adapter = adapter
 
         return binding.root
     }
