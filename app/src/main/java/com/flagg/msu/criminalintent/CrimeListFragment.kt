@@ -33,7 +33,9 @@ class CrimeListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentCrimeListBinding.inflate(inflater, container, false)
+
         binding.crimeRecyclerView.layoutManager = LinearLayoutManager(context)
+
         return binding.root
     }
 
